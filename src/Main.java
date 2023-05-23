@@ -48,19 +48,23 @@ public class Main {
         System.out.println("Задача 4");
         double money = 15000;
         int i = 0;
-        while (money < 12_000_000) {
+        double bankPercent = 0.07;
+        int all = 12_000_000;
+        while (money < all) {
             i = i +1;
-            money = money + money * 0.07;
+            money = money + money * bankPercent;
             System.out.println("Сумма " + money + " , количество месяцев " + i);
         }
     }
     public static void task5 () {
         System.out.println("Задача 5");
         double money = 15000;
-        int i = 0;
-        for (; money < 12_000_000; i++) {
-            money = money + money * 0.07;
-            if (i % 6 == 0) {
+        double bankPercent = 0.07;
+        int all = 12_000_000;
+        int period = 6;
+        for (int i = 0; money < all; i++) {
+            money = money + money * bankPercent;
+            if (i % period == 0) {
                 System.out.println("Сумма " + money + " , количество месяцев " + i);
             }
         }
@@ -68,25 +72,28 @@ public class Main {
     public static void task6 () {
         System.out.println("Задача 6");
         double money = 15000;
-        int i = 0;
-        for (; i <= 9 * 12; i++) {
-            money = money + money * 0.07;
-            if (i % 6 == 0) {
+        int period = 6;
+        int years = 9;
+        int allMonth = years * 12;
+        double bankPercent = 0.07;
+        for (int i = 0; i <= allMonth; i++) {
+            money = money + money * bankPercent;
+            if (i % period == 0) {
                 System.out.println("Сумма " + money + " , количество месяцев " + i);
             }
         }
     }
     public static void task7 () {
         System.out.println("Задача 7");
-        int fr = 1;
-        for (; fr < 31; fr += 7) {
+        for (int fr = 1; fr < 31; fr += 7) {
             System.out.println("Сегодня пятница " + fr + " необходимо подготовить отчет");
         }
     }
     public static void task8 () {
         System.out.println("Задача 8");
-        for (int i = 0; i < 2123; i += 79) {
-            if (i > 1823) {
+        int currentYear = 2023;
+        for (int i = 0; i < currentYear + 100; i += 79) {
+            if (i > currentYear - 200) {
                 System.out.println(i);
             }
         }
